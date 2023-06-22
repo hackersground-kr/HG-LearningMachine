@@ -32,7 +32,7 @@ drive.mount('/content/drive')<br>
 코드 셀을 실행하고 구글 드라이브에 연결시켜줍니다. 이후 상단 런타임에서 모두 실행이나 Ctrl+F9를 누릅니다. (만약 실행이 완료되지 않고 데이터를 불러오는 코드에서 에러가 난다면 실행자가 다운로드를 잘못한 것입니다. 이 경우에는 데이터를 다운로드 받는 코드인<br>pd.read_csv<br>
 의 괄호안 경로를 다시 설정해 주어야 합니다.(작은 따움표를 빼면 안됩니다.) 경로를 다시 설정하는 방법은 코랩에 파일로 들어간후 drive에 자신이 저장한 루트에 들어가고 다운로드한 파일을 우클릭 한 후 경로를 복사하고 코드내의 모든 파일을 불러오는 코드를 바꾸어 줍니다.(하나라도 바꾸지 않으면 에러가 납니다.) 이후 코드를 모두 실행해 줍니다. 그리고 모든 ipynb을 실행시켜 줍니다.<br>
 
-[MyDoctor.war](./MyDoctor.war) 파일을 다운로드 받습니다.<br>
+[MyDoctor.war](./MyDoctor.war), [MyDoctor.sql](./MyDoctor.sql)파일을 다운로드 받습니다.<br>
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 
@@ -89,8 +89,7 @@ Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_app
 (your_appsvc_name) -> 개요 -> 다시 시작 을 클릭합니다.<br>
 
 7. SQL 서버 초기 설정을 수행합니다.<br>
-(your_appsvc_name).azurewebsites.net/sql_init.jsp 주소를 브라우저에서 접속합니다.<br>
-창을 닫아도 된다는 문구가 나타나면 닫으면 됩니다.<br>
+DB Tool로 SQL Server에 접속한 뒤 MyDoctor.sql 파일을 실행합니다.<br>
 
 8. 완료<br>
 (your_appsvc_name).azurewebsites.net 에 접속합니다.<br>
