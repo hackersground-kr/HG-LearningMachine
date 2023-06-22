@@ -112,6 +112,7 @@ Password -> Store in Vault... -> (your_sql_passwd)<br>
 SSL 인증서가 필요한 경우 Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_sql_server_name) -> 네트워킹 -> SSL 인증서 다운로드 탭을 클릭하면 다운로드 가능합니다.<br>
 
 방금 Connect 한 MySQL Server에 접속 후 File -> Run SQL Script 를 클릭하여 MyDoctor.sql 파일을 불러와 실행합니다.<br>
+** Run SQL Script 창 내에서 에러가 날 경우 **  File -> Open SQL Script 를 클릭하여 MyDoctor.sql 파일을 불러온 후 Query -> Execute(All or Selection) 을 클릭하여 전체 구문이 실행되도록 합니다. <br>
 
 데이터베이스 구축이 되었습니다.<br>
 
