@@ -86,6 +86,10 @@ File -> Import -> Web -> WAR file<br>
 HG-LearningMachine 우클릭 -> Export -> WAR file<br>
 
 6. App Service 서버에 WAR file 을 업로드 합니다.<br>
+먼저, FTP Client 를 설치합니다. Filezilla Client를 기준으로 설명합니다.<br>
+[여기](https://filezilla-project.org/download.php?platform=win64)를 접속하고 Download 버튼을 클릭하여 Filezilla Client Installer 를 내려받아 실행합니다.<br>
+약관에 동의하고 Installation Option 을 Anyone who uses this computer (all users) 로, Components 는 기본 설정 대로, 설치 경로를 지정해주고 마지막으로 Install 버튼을 클릭하면 잠시 후 Filezilla Client 가 설치 완료됩니다.<br>
+
 Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_appsvc_name) -> 배포 센터 -> FTPS 자격 증명<br>
 FTPS 자격 증명 탭에 표시된 FTPS 엔드포인트, FTPS 사용자 이름, 암호를 FileZilla와 같은 FTP 접속 프로그램으로 App Service 서버의 드라이브에 접속합니다.<br>
 Ex.)<br>
@@ -97,7 +101,9 @@ Password: RnmH3QvyYC1kMq ...<br>
 (your_appsvc_name) -> 개요 -> 다시 시작 을 클릭합니다.<br>
 
 8. SQL 서버 초기 설정을 수행합니다.<br>
-DBeaver, MySQL Workbench와 같은 DB Tool을 기동합니다. (MySQL Workbench 기준)
+[여기](https://dev.mysql.com/downloads/workbench/)를 접속하고 Download 버튼을 클릭하여 MySQL Workbench Installer 를 내려받아 실행합니다.<br>
+설치 위치를 지정하고 Setup Type를 Complete로, 마지막으로 Install 버튼을 클릭하면 잠시 후 MySQL Workbench 가 설치 완료됩니다.<br>
+MySQL Workbench를 기동합니다.<br>
 Database -> Connect to Database<br>
 Parameters<br>
 Hostname: (your_sql_server_name).mysql.database.azure.com<br>
