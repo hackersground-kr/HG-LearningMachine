@@ -76,7 +76,7 @@ Java 웹 서버 스택: Apache Tomcat 10.0<br>
 3. Eclipse에서 MyDoctor.war 파일을 Import 합니다.<br>
 File -> Import -> Web -> WAR file<br>
 
-4. HG-LearningMachine -> src -> main -> webapp -> header.jsp 와 sql_init.jsp 의 jdbcUrl, dbId, dbPass 변수의 특정 부분을 임의로 지정한 서버 이름, id, 암호로 수정한 후 저장합니다.<br>
+4. HG-LearningMachine -> src -> main -> webapp -> header.jsp 의 jdbcUrl, dbId, dbPass 변수의 특정 부분을 임의로 지정한 서버 이름, id, 암호로 수정한 후 저장합니다.<br>
 (your_sql_server_name) , (your_sql_user) , (your_sql_passwd)<br>
 
 5. WAR 파일을 Export 합니다.<br>
