@@ -1,3 +1,5 @@
+drop database if exists web_db;
+
 create database web_db;
 
 CREATE TABLE web_db.heart_attack (
@@ -20,7 +22,7 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE web_db.stroke (
+CREATE TABLE web_db.brain (
 	id INT not null primary key auto_increment,
 	image1 LONGTEXT NULL,
 	image2 longtext NULL,
