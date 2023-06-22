@@ -87,14 +87,31 @@ HG-LearningMachine 우클릭 -> Export -> WAR file<br>
 
 6. App Service 서버에 WAR file 을 업로드 합니다.<br>
 Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_appsvc_name) -> 배포 센터 -> FTPS 자격 증명<br>
-표시된 FTPS 엔드포인트, FTPS 사용자 이름, 암호를 바탕으로 App Service 서버에 접속합니다.<br>
+FTPS 자격 증명 탭에 표시된 FTPS 엔드포인트, FTPS 사용자 이름, 암호를 FileZilla와 같은 FTP 접속 프로그램으로 App Service 서버의 드라이브에 접속합니다.<br>
+Ex.)<br>
+Hostname: ftps://waws-prod-se1-015.ftp.azurewebsites.windows.net/<br>
+Username: LM-testserver\$LM-testserver<br>
+Password: RnmH3QvyYC1kMq ...<br>
+
 /site/wwwroot 디렉토리에 Export 한 WAR 파일을 업로드 합니다.<br>
 (your_appsvc_name) -> 개요 -> 다시 시작 을 클릭합니다.<br>
 
-7. SQL 서버 초기 설정을 수행합니다.<br>
-DB Tool로 SQL Server에 접속한 뒤 MyDoctor.sql 파일을 실행합니다.<br>
+8. SQL 서버 초기 설정을 수행합니다.<br>
+DBeaver, MySQL Workbench와 같은 DB Tool을 기동합니다. (MySQL Workbench 기준)
+Database -> Connect to Database<br>
+Parameters<br>
+Hostname: (your_sql_server_name).mysql.database.azure.com<br>
+Port: 3306<br>
+Username: (your_sql_user)<br>
+Password -> Store in Vault... -> (your_sql_passwd)<br>
 
-8. 완료<br>
+(괄호로 되어 있는 값은 임의로 지정하시기 바랍니다.)<br>
+
+SSL 인증서가 필요한 경우 Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_sql_server_name) -> 네트워킹 -> SSL 인증서 다운로드 탭을 클릭하면 다운로드 가능합니다.<br>
+
+MyDoctor.sql 파일을 실행하여 데이터베이스를 구축합니다.<br>
+
+9. 완료<br>
 (your_appsvc_name).azurewebsites.net 에 접속합니다.<br>
 
-colab에서 맨 마지막 셀을 실행하여 결과를 확인합니다.<br>
+colab에서 맨 마지막 셀을 실행하여 결과를 전송하고, 개별 페이지에서 결과를 확인합니다.<br>
