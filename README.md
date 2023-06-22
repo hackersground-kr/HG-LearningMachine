@@ -27,13 +27,9 @@
 
 ### 사전 준비 사항
 
-colab 관련 파일은 [여기](./colab/)에서 확인 가능합니다.
+깃허브에 있는 데이터 셋과 ipynb파일을 다운로드 합니다. 데이터셋의 종류는 heart = 심장마비, brain_stroke = 뇌졸증, breast-cancer = 유방암 데이터셋 입니다. 각각 따로 다운로드한 데이터셋과 ipynb파일을 구글 드라이브에 업로드 합니다.(폴더에 저장하거나 이름을 바꾸면 안됩니다.) <br>
 
-코랩 관련 - 깃허브에 있는 데이터 셋과 ipynb파일을 다운로드 합니다. 데이터셋의 종류는 heart = 심장마비, brain_stroke = 뇌졸증, breast-cancer = 유방암 데이터셋 입니다. 각각 따로 다운로드한 데이터셋과 ipynb파일을 구글 드라이브에 업로드 합니다.(폴더에 저장하거나 이름을 바꾸면 안됩니다.) <br>
-from google.colab import drive<br>
-drive.mount('/content/drive')<br>
-코드 셀을 실행하고 구글 드라이브에 연결시켜줍니다. 이후 상단 런타임에서 모두 실행이나 Ctrl+F9를 누릅니다. (만약 실행이 완료되지 않고 데이터를 불러오는 코드에서 에러가 난다면 실행자가 다운로드를 잘못한 것입니다. 이 경우에는 데이터를 다운로드 받는 코드인<br>pd.read_csv<br>
-의 괄호안 경로를 다시 설정해 주어야 합니다.(작은 따움표를 빼면 안됩니다.) 경로를 다시 설정하는 방법은 코랩에 파일로 들어간후 drive에 자신이 저장한 루트에 들어가고 다운로드한 파일을 우클릭 한 후 경로를 복사하고 코드내의 모든 파일을 불러오는 코드를 바꾸어 줍니다.(하나라도 바꾸지 않으면 에러가 납니다.) 이후 코드를 모두 실행해 줍니다. 그리고 모든 ipynb을 실행시켜 줍니다.<br>
+colab 관련 파일은 [여기](./colab/)에서 확인 가능합니다.
 
 [MyDoctor.war](./MyDoctor.war), [MyDoctor.sql](./MyDoctor.sql)파일을 다운로드 받습니다.<br>
 
@@ -54,7 +50,7 @@ MySQL 버전: 8.0<br>
 암호: (your_sql_passwd)<br>
 네트워킹<br>
 연결 방법: 퍼블릭 액세스(허용된 IP 주소)<br>
-방화벽 규칙: Azure 내의  모든 Azure 서비스의 이 서버에 대한 퍼블릭 액세스 허용<br>
+방화벽 규칙: Azure 내의  모든 Azure 서비스의 이 서버에 대한 퍼블릭 액세스 허용, 0.0.0.0 - 255.255.255.255 추가<br>
 
 (괄호로 되어 있는 값은 임의로 지정하시기 바랍니다.)<br>
 
@@ -115,7 +111,18 @@ Password -> Store in Vault... -> (your_sql_passwd)<br>
 
 SSL 인증서가 필요한 경우 Azure Portal -> 리소스 그룹 -> (your_resource_group) -> 개요 -> (your_sql_server_name) -> 네트워킹 -> SSL 인증서 다운로드 탭을 클릭하면 다운로드 가능합니다.<br>
 
-MyDoctor.sql 파일을 실행하여 데이터베이스를 구축합니다.<br>
+방금 Connect 한 MySQL Server에 접속 후 File -> Run SQL Script 를 클릭하여 MyDoctor.sql 파일을 불러와 실행합니다.<br>
+** Run SQL Script 창 내에서 에러가 날 경우 **  File -> Open SQL Script 를 클릭하여 MyDoctor.sql 파일을 불러온 후 Query -> Execute(All or Selection) 을 클릭하여 전체 구문이 실행되도록 합니다. <br>
+
+데이터베이스 구축이 되었습니다.<br>
+
+9. Google Colab 노트북을 실행합니다.<br>
+`from google.colab import drive`<br>
+`drive.mount('/content/drive')`<br>
+코드 셀을 실행하고 구글 드라이브에 연결시켜줍니다. 이후 상단 런타임에서 모두 실행이나 Ctrl+F9를 누릅니다. (만약 실행이 완료되지 않고 데이터를 불러오는 코드에서 에러가 난다면 실행자가 다운로드를 잘못한 것입니다. 이 경우에는 데이터를 다운로드 받는 코드인<br>`pd.read_csv`<br>
+의 괄호안 경로를 다시 설정해 주어야 합니다.(작은 따움표를 빼면 안됩니다.) 경로를 다시 설정하는 방법은 코랩에 파일로 들어간후 drive에 자신이 저장한 루트에 들어가고 다운로드한 파일을 우클릭 한 후 경로를 복사하고 코드내의 모든 파일을 불러오는 코드를 바꾸어 줍니다.(하나라도 바꾸지 않으면 에러가 납니다.)<br>
+맨 밑의 3개 셀은 MySQL 서버에 데이터를 전송하는 셀입니다. config 딕셔너리의 host, user, password 값을 MySQL 서버 구축 시 지정한 값으로 변경하시기 바랍니다.<br>
+이후 코드를 모두 실행해 줍니다. 그리고 모든 ipynb을 실행시켜 줍니다.<br>
 
 9. 완료<br>
 (your_appsvc_name).azurewebsites.net 에 접속합니다.<br>
